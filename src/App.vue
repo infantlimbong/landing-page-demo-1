@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <Navbar />
+    <Navbar />
+    <div class="container font-serif">
         <Home />
         <Gallery />
         <Ballroom />
