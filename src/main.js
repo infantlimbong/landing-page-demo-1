@@ -12,7 +12,7 @@ const app = createApp(App)
 app.use(VueScrollTo, {
     duration: 300,
     easing: 'ease-in',
-    // offset: 100,
+    // offset: 200,
 })
 
 app.mount('#app')
