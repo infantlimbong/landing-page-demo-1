@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "boxicons": "^2.1.4",
     "vue": "^3.4.37",
     "vue-scrollto": "^2.20.0"
   },

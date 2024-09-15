@@ -1,15 +1,18 @@
 <template>
-    <nav class="bg-white shadow sticky top-0 w-full z-50 h-14">
+    <nav class="bg-primary sticky md:fixed top-0 w-full z-50 h-14">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="w-full h-14 flex items-center justify-between px-4">
-                <h1 class="text-lg font-bold font-sans">Landing Page</h1>
+            <div class="w-full h-14 flex items-center justify-between px-5">
+                <a href="" class="flex items-center gap-x-1">
+                    <img src="/images/logo.png" alt="Logo image" class="w-9" />
+                    <h1 class="text-xl font-bold font-serif text-secondary">ECH</h1>
+                </a>
                 <!-- Hamburger Menu for Mobile -->
                 <div class="md:hidden">
-                    <button @click="toggleNavbar" class="relative z-50 flex flex-col w-8 aspect-square items-center justify-center">
+                    <button @click="toggleNavbar" class="relative z-50 flex flex-col w-8 aspect-square items-end justify-center">
                         <!-- Hamburger Icon and X Icon with transition -->
-                        <span :class="{ 'transform rotate-45 transition-transform': isNavbarOpen }" class="block w-6 h-0.5 bg-black rounded"></span>
-                        <span :class="{ 'opacity-0': isNavbarOpen }" class="block w-6 h-0.5 bg-black mt-1.5 rounded"></span>
-                        <span :class="{ 'transform -rotate-45 mt-[-10px] transition-transform': isNavbarOpen }" class="block w-6 h-0.5 bg-black mt-1.5 rounded"></span>
+                        <span :class="{ 'transform rotate-45 transition-transform': isNavbarOpen }" class="block w-6 h-0.5 bg-secondary rounded"></span>
+                        <span :class="{ 'opacity-0': isNavbarOpen }" class="block w-6 h-0.5 bg-secondary mt-1.5 rounded"></span>
+                        <span :class="{ 'transform -rotate-45 mt-[-10px] transition-transform': isNavbarOpen }" class="block w-6 h-0.5 bg-secondary mt-1.5 rounded"></span>
                     </button>
                 </div>
             </div>
@@ -33,7 +36,7 @@
             </ul>
         </div>
         <!-- Mobile Navbar -->
-        <div :class="{ 'translate-x-0 opacity-100': isNavbarOpen, '-translate-x-full opacity-0': !isNavbarOpen }" class="fixed left-0 top-14 w-full h-full bg-black/30 backdrop-blur-lg transition-all duration-300 md:hidden">
+        <div :class="{ 'translate-x-0 opacity-100': isNavbarOpen, '-translate-x-full opacity-0': !isNavbarOpen }" class="fixed left-0 top-14 w-full h-full bg-black/30 backdrop-blur-lg transition-all duration-500 md:hidden">
             <ul class="px-6 h-full text-center flex flex-col justify-center pb-28 text-lg">
                 <li class="w-full relative flex">
                     <a @click.prevent="scrollToSection('home')" :class="['py-4 w-full', linkClasses('home')]"> Home </a>
