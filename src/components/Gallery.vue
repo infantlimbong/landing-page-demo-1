@@ -6,7 +6,6 @@
                 :grabCursor="true"
                 :slides-per-view="1"
                 :spaceBetween="10"
-                :loop="true"
                 :autoplay="{
                     delay: 3000,
                     disableOnInteraction: false,
@@ -139,5 +138,19 @@ onMounted(() => {
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px;
     height: 100%;
+}
+
+::v-deep .swiper-button-next,
+::v-deep .swiper-button-prev {
+    color: #fff;
+    scale: 0.5;
+}
+
+::v-deep .swiper-pagination-bullet {
+    background-color: #e6c895 !important;
+}
+
+::v-deep .swiper-pagination-bullet-active {
+    background-color: #9a0000 !important;
 }
 </style>

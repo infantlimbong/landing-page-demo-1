@@ -14,10 +14,11 @@
                 <div class="absolute w-full h-[1px] bottom-0 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
             </h2>
 
-            <div v-if="isSmallScreen" class="relative w-full mt-4" data-aos="fade-up" data-aos-duration="1500">
+            <div class="relative w-full mt-4" data-aos="fade-up" data-aos-duration="1500">
                 <swiper
                     :effect="'cards'"
                     :grabCursor="true"
+                    :slides-per-view="1"
                     :spaceBetween="0"
                     :pagination="{
                         dynamicBullets: true,
@@ -26,6 +27,16 @@
                     :autoplay="{
                         delay: 5000,
                         disableOnInteraction: false,
+                    }"
+                    :breakpoints="{
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 0,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            spaceBetween: 0,
+                        },
                     }"
                     :modules="modules"
                     class="swiper-container"
@@ -40,17 +51,6 @@
                     <h4 class="font-bold text-serif uppercase">{{ menus[currentIndex].name }}</h4>
                     <p class="font-sans text-primary">{{ menus[currentIndex].price }}</p>
                     <p>{{ menus[currentIndex].description }}</p>
-                </div>
-            </div>
-
-            <div v-else class="grid grid-cols-3 gap-4 mt-4">
-                <div v-for="(menu, index) in menus" :key="index" class="menu-item flex flex-col">
-                    <img :src="menu.img" :alt="menu.name" class="w-full object-cover" />
-                    <div class="text-center mt-4">
-                        <h4 class="font-bold text-serif uppercase">{{ menu.name }}</h4>
-                        <p class="font-sans text-primary">{{ menu.price }}</p>
-                        <p>{{ menu.description }}</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -72,12 +72,6 @@ import { Autoplay, Pagination, Navigation, EffectCards } from 'swiper/modules'
 // Menus data
 const menus = ref([
     {
-        name: 'Crispy Shrimp Delight',
-        img: '/images/home-menu-3.jpg',
-        price: '179.000 IDR',
-        description: 'Grilled prawns with vegetable garnish and green dipping sauce.',
-    },
-    {
         name: 'Cantonese Chicken Noodle Soup',
         img: '/images/home-menu-1.jpg',
         price: '99.000 IDR',
@@ -89,29 +83,59 @@ const menus = ref([
         price: '199.000 IDR',
         description: 'Chicken stir-fried with peppers in spicy Sichuan sauce.',
     },
+    {
+        name: 'Crispy Shrimp Delight',
+        img: '/images/home-menu-3.jpg',
+        price: '179.000 IDR',
+        description: 'Grilled prawns with vegetable garnish and green dipping sauce.',
+    },
+    {
+        name: 'Spicy Tofu with Veggies',
+        img: '/images/home-menu-4.jpg',
+        price: '129.000 IDR',
+        description: 'Tofu stir-fried with bell peppers, topped with coriander and spices.',
+    },
+    {
+        name: 'Crispy Corn Patties',
+        img: '/images/home-menu-5.jpg',
+        price: '89.000 IDR',
+        description: 'Corn patties with a crispy coating, served with a mint chutney dip.',
+    },
+    {
+        name: 'Braised Pork Ribs',
+        img: '/images/home-menu-6.jpg',
+        price: '239.000 IDR',
+        description: 'Juicy braised pork ribs marinated in rich soy and garlic sauce.',
+    },
+    {
+        name: 'Tangy Fish Stir-fry',
+        img: '/images/home-menu-7.jpg',
+        price: '199.000 IDR',
+        description: 'Stir-fried fish fillets with tangy sauce and mixed vegetables.',
+    },
+    {
+        name: 'Beef Pho',
+        img: '/images/home-menu-8.jpg',
+        price: '149.000 IDR',
+        description: 'Vietnamese pho with tender beef, rice noodles, and fresh herbs.',
+    },
+    {
+        name: 'Garlic Fried Rice',
+        img: '/images/home-menu-9.jpg',
+        price: '79.000 IDR',
+        description: 'Classic fried rice with garlic, soy sauce, and spring onions.',
+    },
 ])
 
-const isSmallScreen = ref(false)
 const currentIndex = ref(0)
 
 const modules = [Autoplay, Pagination, Navigation, EffectCards]
-
-const checkScreenSize = () => {
-    isSmallScreen.value = window.innerWidth < 640
-}
 
 const onSlideChange = (swiper) => {
     currentIndex.value = swiper.activeIndex
 }
 
-onMounted(() => {
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-
-    return () => {
-        window.removeEventListener('resize', checkScreenSize)
-    }
-})
+onMounted(() => {})
 </script>
 
 <style scoped>
