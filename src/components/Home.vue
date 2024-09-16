@@ -1,14 +1,14 @@
 <template>
     <section id="home" class="relative">
         <div class="jumbotron h-96 md:min-h-screen flex justify-center">
-            <div class="text-center text-gray-300 flex flex-col bg-black/70 w-full items-center justify-center px-5">
+            <div class="text-center text-gray-300 flex flex-col bg-black/60 w-full items-center justify-center px-5">
                 <h2 class="text-3xl font-serif uppercase">Empress Canton House</h2>
                 <p class="text-lg my-4 font-cursive"> Experience the finest Cantonese cuisine in an ambiance of elegance and tradition. </p>
                 <button class="bg-secondary text-primary py-1 px-4 hover:opacity-70 transition-all duration-300"> ORDER </button>
             </div>
         </div>
 
-        <div class="mt-5 px-5 overflow-hidden">
+        <div class="mt-8 px-5 overflow-hidden">
             <h2 class="text-center font-bold font-sans text-dark text-xl relative pb-2">
                 SIGNATURE MENUS
                 <div class="absolute w-full h-[1px] bottom-0 bg-gradient-to-r from-transparent via-primary to-transparent"></div>

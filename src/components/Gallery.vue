@@ -1,7 +1,10 @@
 <template>
-    <section id="gallery" class="min-h-screen flex items-center justify-center bg-white" data-aos="fade-up" data-aos-duration="1500">
+    <section id="gallery" class="mt-12 flex items-center justify-center bg-white" data-aos="fade-up" data-aos-duration="1500">
         <div class="text-center w-full">
-            <h2 class="text-3xl font-bold mb-8">Gallery</h2>
+            <h2 class="text-center font-bold font-sans text-dark text-xl relative pb-2 mb-4">
+                GALLERY
+                <div class="absolute w-full h-[1px] bottom-0 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+            </h2>
             <swiper
                 :grabCursor="true"
                 :slides-per-view="1"
@@ -106,7 +109,7 @@ onMounted(() => {
 <style scoped>
 .swiper-container {
     width: 100%;
-    height: 70vh;
+    height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,6 +133,7 @@ onMounted(() => {
 .image {
     width: 100%;
     height: 100%;
+    /* object-fit: cover; */
     object-fit: cover;
 }
 
